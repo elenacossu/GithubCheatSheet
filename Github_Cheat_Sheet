@@ -1,0 +1,102 @@
+1. before starting
+    
+    `which git` → in terminal to know where git is
+    
+2. in short if you already have a repository
+    
+    `git pull origin` → pull everything from main
+    
+    `git status` → check uncommitted changes
+    
+    `git add .` → stage everything
+    
+    `git commit -m “message”` → commit with a message
+    
+    `git push origin main` → push everything to main
+    
+3. create a repository: first create your project in R, then
+    1. usethis package
+        
+        `library(usethis)`
+        
+        `usethis::use_git()`
+        
+        `usethis::use_github()`
+        
+4. to create a branch in your repository
+    1.  Usethis package: `usethis::pr_init(branch = “branchname”)`
+    2. Manually: Create a repository from github project itself (repository name → main → create branch)
+    3. Terminal: `git checkout -b nameofnewbranch` (always click refresh)
+5. in case of branches
+    
+    `git branch -a` → see what are your branches
+    
+    `git checkout -b nameofthebranch` → create branch
+    
+    `git branch -d nameofthebranch` → delete branch
+    
+    `git push origin nameofthebranch` → push the branch to the repository
+    
+    `git merge nameofthebranch` → merge the branch to the repository
+    
+    `git checkout nameofthebranch` → switch to a branch and committ happily
+    
+    `git checkout anotherbranchnameormain` → change to another branch
+    
+6. to push and commit new files to the remote repository: first create your files locally, then:
+    1. Manually & terminal
+        
+        click git sheet in environment Rstudio window
+        
+        click commit, select which ones you want to commit under staged, then click create commit message, click commit, click close, then click push
+        
+    2. Terminal option 2
+        
+        `git status` → to see the untracked file or any change. red means unstaged changes.
+        
+        `git add .` → to stage everything OR
+        
+        `git add nameofthescript.R` → to stage that specific script (it’s the same as ticking the box)
+        
+        `git status` → again to see the changes that are going to be committed
+        
+        `git commit -m “message”` → to commit with a message
+        
+        `git status` → again to check everything was properly committed (the difference between committing and staging is that committing creates timestamps in the commit page that can be tracked back)
+        
+        `git push origin main` OR `git push origin nameofthebranch` → to push everything to the remote origin
+        
+7. how to get stuff from your own github repository
+    1. manually option 1: click pull in the Git environment window in Rstudio
+    2. terminal option 2: `git pull origin nameofthebranchORmain`
+    3. terminal option 3: `git pull --all` → to pull everything, branches included. it makes a message in case it overrides everything
+8. move from master to branch and vice versa
+    1. change it manually on github repository page OR
+    2. change it manually on main in Git window OR
+    3. in terminal: `git checkout nameofthebranchORmain`
+9. when you are done and you want to merge remotely
+    1. on github
+        
+        compare & pull button on github
+        
+        you check from wihch to which you want to merge
+        
+        click merge pull request
+        
+        delete branch
+        
+    2. on terminal
+        
+        `git branch -a` → to see all branches and what is remote and what is local and to fix the disconnect between the local and the remote information 
+        
+        `git pull origin main` → to pull the remote stuff to the computer and to update the whole project to reflect what is on remote repository 
+        
+10. clone a public repository
+    
+    go to public repository github page and click code → clone → HTPPS link
+    
+    in terminal `git clone https://github.com/username/repositoryname`
+    
+11. remove just one file from main: move from main, remove file locally, stage, commit, push
+12. removing repository: on github from repository setting
+13. making repository private: on github from repository setting
